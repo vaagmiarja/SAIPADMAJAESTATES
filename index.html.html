@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAI PADMAJA ESTATES | Premium Construction Since 1989</title>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ================= THEME ================= */
+:root {
+    --royal-dark: #0b1c3d;
+    --royal-main: #1e3a8a;
+    --royal-light: #2563eb;
+    --white: #ffffff;
+    --text-soft: #e5e7eb;
+    --shadow: rgba(0,0,0,0.25);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    background: var(--royal-dark);
+    color: var(--white);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* ================= HEADER ================= */
+header {
+    background: var(--royal-dark);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px var(--shadow);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.logo {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--royal-light), var(--royal-main));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.logo-text span { color: var(--royal-light); }
+
+/* ================= NAV ================= */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 28px;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--royal-light);
+    transition: 0.3s;
+}
+
+nav a:hover::after { width: 100%; }
+
+.mobile-menu {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+/* ================= HERO SLIDER ================= */
+.hero {
+    position: relative;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    text-align: center;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        rgba(11,28,61,0.85),
+        rgba(11,28,61,0.85)
+    );
+    z-index: 1;
+}
+
+.hero-slider {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+}
+
+.hero-slide.active {
+    opacity: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    max-width: 900px;
+    margin: auto;
+    color: var(--text-soft);
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 35px;
+    padding: 15px 40px;
+    background: var(--royal-light);
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    background: var(--royal-main);
+    transform: translateY(-3px);
+}
+
+/* ================= SECTIONS ================= */
+section { padding: 100px 0; }
+
+.section-title {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.section-title h2 {
+    font-size: 36px;
+}
+
+.section-title h2::after {
+    content: "";
+    width: 90px;
+    height: 3px;
+    background: var(--royal-light);
+    display: block;
+    margin: 12px auto 0;
+}
+
+/* ================= ABOUT ================= */
+.about p {
+    color: var(--text-soft);
+    margin-bottom: 20px;
+    font-size: 17px;
+}
+
+.about-box {
+    max-width: 950px;
+    margin: auto;
+    text-align: center;
+}
+
+/* ================= SERVICES ================= */
+.services {
+    background: var(--royal-main);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: var(--royal-dark);
+    padding: 32px;
+    border-radius: 12px;
+    border-left: 4px solid var(--royal-light);
+    transition: 0.3s;
+}
+
+.service-card:hover { transform: translateY(-8px); }
+
+.service-icon {
+    font-size: 36px;
+    color: var(--royal-light);
+    margin-bottom: 15px;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background: #070f24;
+    padding: 60px 0 25px;
+}
+
+footer p { color: var(--text-soft); }
+
+.copyright {
+    margin-top: 35px;
+    font-size: 14px;
+    text-align: center;
+    color: var(--text-soft);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--royal-dark);
+        display: none;
+    }
+
+    nav.active { display: block; }
+
+    nav ul {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .mobile-menu { display: block; }
+
+    .hero h1 { font-size: 34px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="container header-container">
+        <div class="logo-container">
+            <div class="logo">SPE</div>
+            <div class="logo-text">SAI PADMAJA <span>ESTATES</span></div>
+        </div>
+
+        <div class="mobile-menu" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <nav id="navMenu">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+
+    <div class="hero-slider">
+        <div class="hero-slide active" style="background-image: url('IMG_0662_1.jpg');"></div>
+        <div class="hero-slide" style="background-image: url('IMG_0672.jpg');"></div>
+        <div class="hero-slide" style="background-image: url('IMG_0678.jpg');"></div>
+        <div class="hero-slide" style="background-image: url('IMG_0681.jpg');"></div>
+        <div class="hero-slide" style="background-image: url('IMG_0686.jpg');"></div>
+        <div class="hero-slide" style="background-image: url('IMG_0689.jpg');"></div>
+        <div class="hero-slide" style="background-image: url('IMG_0691.jpg');"></div>
+        <div class="hero-slide" style="background-image: url('IMG_0694.jpg');"></div>
+    </div>
+
+    <div class="container hero-content">
+        <h1>Engineering & Construction Excellence Since 1989</h1>
+        <p>
+            Delivering quality-driven residential, commercial and engineering solutions
+            with integrity, trust, and over three decades of experience.
+        </p>
+        <a href="#contact" class="cta-button">Get In Touch</a>
+    </div>
+
+</section>
+
+<section class="about" id="about">
+    <div class="container">
+        <div class="section-title">
+            <h2>About Us</h2>
+        </div>
+
+        <div class="about-box">
+            <p>
+                Established in 1989 with a vision of constructing quality multi-floor residential apartments
+                and houses, completing over 40 successful projects.
+            </p>
+
+            <p>
+                Members of NAREDCO Telangana & Andhra Pradesh and GCBA.
+                We specialize in engineering consultancy, construction, quality assurance,
+                and professional training services.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="services" id="services">
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Services</h2>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-drafting-compass"></i></div>
+                <p>Engineering consultancy for RCC and pre-engineered steel structures.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-hard-hat"></i></div>
+                <p>Residential & commercial construction and contracting services.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-ruler-combined"></i></div>
+                <p>Design and detailed drawing services for civil & mechanical works.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-clipboard-check"></i></div>
+                <p>Quality audits, material checks, and design reviews.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
+                <p>Internships, live projects, training, and placements.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer id="contact">
+    <div class="container">
+        <p><strong>SAI PADMAJA ESTATES</strong><br>Engineering & Construction Excellence Since 1989</p>
+
+        <div class="copyright">
+            &copy; <span id="year"></span> SAI PADMAJA ESTATES. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+
+<script>
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
+
+menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+/* HERO SLIDER */
+const slides = document.querySelectorAll(".hero-slide");
+let currentSlide = 0;
+
+setInterval(() => {
+    slides[currentSlide].classList.remove("active");
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add("active");
+}, 4000);
+</script>
+
+</body>
+</html>
